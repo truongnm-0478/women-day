@@ -6,7 +6,7 @@
 }
 
 :root {
-    --background-corlor: rgb(247, 210, 210);
+    --background-corlor: rgb(249, 221, 221);
     --background-color2: #F6F7C1;
     --heart-color: rgb(222, 37, 37);
     --size-heart: 100px;
@@ -17,6 +17,7 @@
 
 
 body {
+    position: relative;
     overflow: hidden;
     width: 100%;
     height: 100%;
@@ -119,27 +120,33 @@ body {
 }
 
 .appear {
+    opacity: 0;
+    visibility: hidden;
     transition: 1.5s;
     transform: scale(3000%);
-    background-color: var(--background-color2);
-    box-shadow: 0 0 0 var(--heart-shadow), 0 0 0 var(--heart-shadow);
+
+
 }
 
 .topanimation.appear ::before {
-    transition: 1.5s;
-    background-color: var(--background-color2);
+    opacity: 0;
+    visibility: hidden;
+    transition: 3.5s;
+
 }
 
 .topanimation.appear ::after {
-    transition: 1.5s;
-    background-color: var(--background-color2);
+    opacity: 0;
+    visibility: hidden;
+    transition: 3.5s;
+
 
 }
 
 .text {
     position: absolute;
     top: 32%;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 20px;
     font-weight: 900;
     animation: first 1s;
@@ -153,40 +160,89 @@ body {
     user-select: none;
 }
 
-
-
-/* .page {
-    cursor: pointer;
-    position: absolute;
-    width: var(--size-heart);
-    height: var(--size-heart);
-    background-color: var(--heart-color);
-    transform: rotate(45deg);
-    animation: first 1s;
-    border-bottom-right-radius: 10%;
+.text.appear {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
 }
 
-.page ::before {
-    content: '';
+.content {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    top: 0;
-    left: -50%;
-    background-color: var(--heart-color);
-    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    visibility: hidden;
+
+
+
 }
 
-
-.page ::after {
-    content: '';
+.background_blur {
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    top: -50%;
-    left: 0%;
-    background-color: var(--heart-color);
-    transform: rotate(45deg);
-} */
+    width: 120%;
+    height: 120%;
+    z-index: 1;
+    transition: 2s;
+    background-image: url(img2.jpg);
+    background-size: cover;
+    filter: blur(5px);
+
+}
+
+.title {
+    color: rgb(249, 214, 220);
+    user-select: none;
+    position: absolute;
+    font-weight: 900;
+    font-size: 70px;
+    transition: 1s;
+    transform: scale(0.3) translateY(150%);
+    visibility: hidden;
+    top: 10%;
+    z-index: 2;
+    opacity: 0;
+
+}
+
+.title.appear_text {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) translateY(0%);
+}
+
+.background_blur.appear_text {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.box {
+    position: absolute;
+    z-index: 3;
+    /* width: 50%;
+    height: 50%; */
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 30px;
+    font-weight: 900;
+    visibility: hidden;
+    top: 30%;
+    text-align: center;
+
+}
+
+.letter {
+    color: white;
+    transition: 1s;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.letter.appear_text {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+}
