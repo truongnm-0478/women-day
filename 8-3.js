@@ -1,3 +1,5 @@
+
+
 function appear() {
     document.querySelector(".topanimation").classList.add("appear")
     document.querySelector(".text").classList.add("appear")
@@ -10,3 +12,4 @@ function appear() {
     animation()
 
 }
+
