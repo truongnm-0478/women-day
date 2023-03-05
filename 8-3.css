@@ -242,7 +242,7 @@ body {
     transform: scale(0.3) translateY(150%);
     visibility: hidden;
     top: 10%;
-    z-index: 2;
+    z-index: 10;
     opacity: 0;
 
 }
@@ -262,7 +262,7 @@ body {
 .box {
     width: 50%;
     position: absolute;
-    z-index: 3;
+    z-index: 10;
     /* width: 50%;
     height: 50%; */
     font-family: Shantell Sans;

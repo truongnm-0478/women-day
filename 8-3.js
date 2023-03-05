@@ -6,5 +6,7 @@ function appear() {
     document.querySelector(".background_blur").classList.add("appear_text")
     document.querySelector(".letter").classList.add("appear_text")
     document.querySelector(".from").classList.add("appear_text")
+    createHearts(50)
+    animation()
 
 }

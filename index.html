@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Shantell+Sans&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -41,15 +42,53 @@
             </div>
 
             <div class="from">
-                From FUJI BOYS with love
+                From FUJI Boys with love
             </div>
 
         </div>
-
-
+    </div>
+    <div id="container">
+        <div class="heart"></div>
     </div>
     <script src="8-3.js"></script>
+    <script src="anime.min.js"></script>
     <script src="https://kit.fontawesome.com/6b945c47fb.js" crossorigin="anonymous"></script>
+
+
+    <script>
+        const container = document.getElementById('container');
+
+        function createHearts(numberHearts) {
+            for (i = 0; i <= numberHearts; i++) {
+                let heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.zIndex = Math.floor(Math.random() * 6) + 2;
+                container.appendChild(heart);
+            }
+        }
+
+        function animation() {
+            anime({
+                targets: '.heart',
+                translateX: function () {
+                    return anime.random(-700, 700);
+                },
+                translateY: function () {
+                    return anime.random(-500, 500);
+                },
+                rotate: 45,
+                scale: function () {
+                    return anime.random(1, 3);
+                },
+                easing: 'easeInOutBack',
+                duration: 3500,
+                delay: anime.stagger(10),
+                complete: animation,
+            })
+        }
+
+
+    </script>
 </body>
 
 </html>
