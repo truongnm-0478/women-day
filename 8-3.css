@@ -9,13 +9,13 @@
     --background-corlor: rgb(249, 221, 221);
     --background-color2: #F6F7C1;
     --heart-color: rgb(222, 37, 37);
-    --size-heart: 100px;
+    --size-heart: 90px;
     --heart-shadow: rgb(117, 27, 27);
     --text-size: 200px;
 
 }
 
-
+html,
 body {
     position: relative;
     overflow: hidden;
@@ -30,14 +30,13 @@ body {
 }
 
 .topanimation {
-    position: relative;
+    position: absolute;
     z-index: 3;
-    width: var(--size-heart);
-    height: var(--size-heart);
+    width: 100%;
+    height: 100%;
     background-color: var(--heart-color);
     transform: rotate(45deg);
     box-shadow: 4px 4px 50px 4px var(--heart-shadow);
-    animation: first 1s;
     border-bottom-right-radius: 10%;
 
 }
@@ -53,6 +52,17 @@ body {
         height: var(--size-heart);
     }
 }
+
+@keyframes first_test {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 
 @keyframes change-color {
     0% {
@@ -91,9 +101,11 @@ body {
 
 
 .top {
-
-    animation: zoom alternate 0.5s infinite;
-    animation-delay: 0.5s;
+    position: relative;
+    align-items: center;
+    width: var(--size-heart);
+    height: var(--size-heart);
+    animation: first 1s, zoom alternate 0.5s infinite 0.5s;
 }
 
 
@@ -144,32 +156,59 @@ body {
 }
 
 .text {
+
     position: absolute;
-    top: 32%;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
     font-size: 20px;
     font-weight: 900;
     animation: first 1s;
-    width: var(--text-size);
-    height: var(--text-size);
+    width: 100%;
+    height: 100%;
+    justify-content: center;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
     animation: zoomtext 1.5s forwards, zoom alternate 0.5s infinite 1.5s;
     user-select: none;
+    z-index: 4;
 }
 
-.text.appear {
+/* .fa-hand-pointer {
+    width: 50%;
+    height: 50%;
+    font-size: 50px;
+    text-align: center;
+    transform: rotate(-5deg);
+} */
+.click,
+.fa-hand-pointer {
+    position: absolute;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-size: 20px;
+    top: 90%;
+    font-weight: 900;
+    animation: first_test 1.5s, zoom alternate 0.5s infinite 1.5s;
+    user-select: none;
+}
+
+.fa-hand-pointer {
+    top: -200%;
+    left: 47%;
+    font-size: 40px;
+    display: inline-block;
+    transform: rotate(-15deg) !important;
+}
+
+.click.appear {
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
 }
 
 .content {
-    position: absolute;
     width: 100%;
     height: 100%;
+    position: absolute;
     display: flex;
     justify-content: center;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
@@ -221,27 +260,38 @@ body {
 }
 
 .box {
+    width: 50%;
     position: absolute;
     z-index: 3;
     /* width: 50%;
     height: 50%; */
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-family: Shantell Sans;
     font-size: 30px;
     font-weight: 900;
     visibility: hidden;
-    top: 30%;
+    top: 35%;
     text-align: center;
 
 }
 
-.letter {
+.letter,
+.from {
     color: white;
     transition: 1s;
+    text-align: justify;
     opacity: 0;
     transform: scale(0);
+    font-weight: 100 !important;
+    font-size: 25px !important;
+    line-height: 50px;
+    user-select: none;
 }
 
-.letter.appear_text {
+.from {
+    text-align: right !important;
+}
+
+.appear_text {
     visibility: visible;
     opacity: 1;
     transform: scale(1);
