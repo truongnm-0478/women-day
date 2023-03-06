@@ -38,7 +38,7 @@ body {
     transform: rotate(45deg);
     box-shadow: 4px 4px 50px 4px var(--heart-shadow);
     border-bottom-right-radius: 10%;
-
+    cursor: pointer;
 }
 
 @keyframes first {
@@ -121,15 +121,6 @@ body {
     }
 }
 
-@keyframes zoomtext {
-    0% {
-        transform: scale(0) translateY(50%);
-    }
-
-    100% {
-        transform: scale(1) translateY(0%);
-    }
-}
 
 .appear {
     opacity: 0;
@@ -155,31 +146,8 @@ body {
 
 }
 
-.text {
 
-    position: absolute;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 20px;
-    font-weight: 900;
-    animation: first 1s;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    animation: zoomtext 1.5s forwards, zoom alternate 0.5s infinite 1.5s;
-    user-select: none;
-    z-index: 4;
-}
 
-/* .fa-hand-pointer {
-    width: 50%;
-    height: 50%;
-    font-size: 50px;
-    text-align: center;
-    transform: rotate(-5deg);
-} */
 .click,
 .fa-hand-pointer {
     position: absolute;
@@ -228,7 +196,7 @@ body {
     transition: 2s;
     background-image: url(img2.jpg);
     background-size: cover;
-    filter: blur(5px);
+    filter: blur(3px);
 
 }
 
@@ -242,7 +210,7 @@ body {
     transform: scale(0.3) translateY(150%);
     visibility: hidden;
     top: 10%;
-    z-index: 10;
+    z-index: 29;
     opacity: 0;
 
 }
@@ -260,14 +228,10 @@ body {
 }
 
 .box {
-    width: 50%;
+    width: 70%;
     position: absolute;
-    z-index: 10;
-    /* width: 50%;
-    height: 50%; */
+    z-index: 29;
     font-family: Shantell Sans;
-    font-size: 30px;
-    font-weight: 900;
     visibility: hidden;
     top: 35%;
     text-align: center;
@@ -282,13 +246,18 @@ body {
     opacity: 0;
     transform: scale(0);
     font-weight: 100 !important;
-    font-size: 25px !important;
-    line-height: 50px;
+    font-size: 35px !important;
+    line-height: 70px;
     user-select: none;
+
+
+
 }
 
 .from {
     text-align: right !important;
+    margin-top: 50px;
+    text-shadow: 4px 4px 0px #87f94eb7, 7px 7px 0px rgba(53, 97, 3, 0.731);
 }
 
 .appear_text {

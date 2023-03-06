@@ -19,7 +19,9 @@
 }
 
 #container {
-    position: relative;
+    position: absolute;
+    width: 40px;
+    height: 40px;
 }
 
 .heart {
@@ -30,6 +32,7 @@
     transform: rotate(45deg);
     box-shadow: 0 0 0px #fd0e42,
         20px 20px 40px var(--heart-shadow);
+    border-bottom-right-radius: 10%;
 }
 
 .heart::before {
