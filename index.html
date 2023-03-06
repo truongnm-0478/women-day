@@ -60,6 +60,9 @@
                     let heart = document.createElement('div');
                     heart.className = 'heart';
                     heart.style.zIndex = Math.floor(Math.random() * 28) + 2;
+                    heart.style.visibility = "visible";
+                    heart.style.animation = "on 3s forwards 1s";
+
                     container.appendChild(heart);
                 }
             }
@@ -88,13 +91,13 @@
 
 
             function appear() {
+                i = 0;
                 document.querySelector(".topanimation").classList.add("appear");
                 document.querySelector(".click").classList.add("appear");
                 document.querySelector(".title").classList.add("appear_text");
                 document.querySelector(".background_blur").classList.add("appear_text");
                 document.querySelector(".letter").classList.add("appear_text");
                 document.querySelector(".from").classList.add("appear_text");
-
                 createHearts(20);
                 animation();
             }

@@ -22,6 +22,8 @@
     position: absolute;
     width: 40px;
     height: 40px;
+    visibility: hidden;
+
 }
 
 .heart {
@@ -33,7 +35,23 @@
     box-shadow: 0 0 0px #fd0e42,
         20px 20px 40px var(--heart-shadow);
     border-bottom-right-radius: 10%;
+    opacity: 0;
+    visibility: hidden;
+
 }
+
+
+
+@keyframes on {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .heart::before {
     content: '';
