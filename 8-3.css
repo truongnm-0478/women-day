@@ -194,8 +194,9 @@ body {
     height: 120%;
     z-index: 1;
     transition: 2s;
-    background-image: url(img2.jpg);
+    background-image: url(img4.jpg);
     background-size: cover;
+    background_position: center;
     filter: blur(3px);
 
 }
