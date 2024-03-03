@@ -206,7 +206,7 @@ body {
     user-select: none;
     position: absolute;
     font-weight: 900;
-    font-size: 60px;
+    font-size: 50px;
     transition: 1s;
     transform: scale(0.3) translateY(150%);
     visibility: hidden;
@@ -247,7 +247,7 @@ body {
     opacity: 0;
     transform: scale(0);
     font-weight: 100 !important;
-    font-size: 35px !important;
+    font-size: 25px !important;
     line-height: 70px;
     user-select: none;
 
